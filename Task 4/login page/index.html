@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+        }
+
+        button {
+            background: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p class="register-link">Don't have an account? <a href="#" id="show-register">Register here</a></p>
+    </div>
+
+    <div class="container" id="register-container" style="display: none;">
+        <h2>Register</h2>
+        <form id="register-form">
+            <label for="new-username">Username</label>
+            <input type="text" id="new-username" name="new-username" required>
+
+            <label for="new-password">Password</label>
+            <input type="password" id="new-password" name="new-password" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <p class="register-link">Already have an account? <a href="#" id="show-login">Login here</a></p>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+        const registerContainer = document.getElementById("register-container");
+        const showRegisterLink = document.getElementById("show-register");
+        const showLoginLink = document.getElementById("show-login");
+
+        showRegisterLink.addEventListener("click", () => {
+            loginForm.style.display = "none";
+            registerContainer.style.display = "block";
+        });
+
+        showLoginLink.addEventListener("click", () => {
+            loginForm.style.display = "block";
+            registerContainer.style.display = "none";
+        });
+
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // Add your login logic here
+            alert("Login logic goes here");
+        });
+
+        registerForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // Add your registration logic here
+            alert("Registration logic goes here");
+        });
+    </script>
+</body>
+</html>
